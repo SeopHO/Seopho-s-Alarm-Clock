@@ -1,24 +1,50 @@
 const decreaseS = document.querySelectorAll(".decrease");
 const increaseS = document.querySelectorAll(".increase");
 
-const view = document.querySelector("view");
 const view_hour = document.querySelector(".view-hour");
 const view_minute = document.querySelector(".view-minute");
 const view_second = document.querySelector(".view-second");
 
 const timer = document.querySelector(".timer-start");
 
-let hour=0,min=0,sec=0;
+let hour=0,min=0,sec=0; //default.
+
+function detail(value)
+{
+    if(value<10)
+    {
+        return `0${value}`;
+    }
+    else
+    {
+        return value;
+    }
+}
+
+function detail2(value)
+{
+    if(value<0)
+    {
+        value = 59;
+        return value;
+    }
+    else if(value>59)
+    {
+        value=0;
+        return value;
+    }
+    else
+    {
+        return value;
+    }
+}
+
 
 decreaseS.forEach(function(decrease)
 {
     decrease.addEventListener("click",function(event)
     {
         const styles_d = event.currentTarget.classList;
-        // const test = event.currentTarget;
-        // console.log(styles);
-        // console.log(test);
-        
         if(styles_d.contains("decrease"))
         {
             if(styles_d.contains("hour-decrease"))
@@ -50,7 +76,6 @@ increaseS.forEach(function(btn)
     btn.addEventListener("click",function(event)
     {
         const styles_i = event.currentTarget.classList;
-        // console.log(styles);
         if(styles_i.contains("increase"))
         {
             if(styles_i.contains("hour-increase"))
@@ -83,8 +108,12 @@ timer.addEventListener("click",function()
 
     let time = setInterval(function()
     {
-
         sec--;
+        if(hour === 0 && min === 0 && sec === 0)
+        {
+            alert("END");
+            clearInterval(time);
+        }
         if(sec<0)
         {
             sec = 59;
@@ -95,46 +124,12 @@ timer.addEventListener("click",function()
             min=59;
             hour--;
         }
-        if(hour === 0 && min === 0 && sec === 0)
-        {
-            alert("END");
-            clearInterval(time);
-        }
+        
 
-        view_hour.textContent = hour;
-        view_minute.textContent = min;
-        view_second.textContent = sec;
-
+        view_hour.textContent = detail(hour);
+        view_minute.textContent = detail(min);
+        view_second.textContent = detail(sec);
     },1000);
 
 })
 
-function detail(value)
-{
-    if(value<10)
-    {
-        return `0${value}`;
-    }
-    else
-    {
-        return value;
-    }
-}
-
-function detail2(value)
-{
-    if(value<0)
-    {
-        value = 59;
-        return value;
-    }
-    else if(value>59)
-    {
-        value=0;
-        return value;
-    }
-    else
-    {
-        return value;
-    }
-}
