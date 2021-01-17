@@ -6,38 +6,43 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="title"><h1>SeopHo's Alarm</h1></div>
-
+        <div class="title">
+            <h1>SeopHo's Alarm</h1>
+        </div>
         <div class="container">
+            <div class="start">
+                <button class="alarm-start">-</button>
+            </div>
+            <div class="clock-container">
+                <div class="view view-hour">
+                    <p>00</p>
+                </div>
+                <div class="view view-minute">
+                    <p>00</p>
+                </div>
+                <div class="view view-second">
+                    <p>00</p>
+                </div>
+            </div>
+    
+            <div class="button-container">
+                <div class="btn btn-hour">
+                    <button class="decrease hour-decrease">-</button>
+                    <button class="increase hour-increase">+</button>
+                </div>
+    
+                <div class="btn btn-minute">
+                    <button class="decrease minute-decrease">-</button>
+                    <button class="increase minute-increase">+</button>
+                </div>
+    
+                <div class="btn btn-second">
+                    <button class="decrease second-decrease">-</button>
+                    <button class="increase second-increase">+</button>
+                </div>
+            </div>
 
-        </div>
-        <div class="clock-container">
-            <div class="view view-hour">
-                <p>00</p>
-            </div>
-            <div class="view view-minute">
-                <p>00</p>
-            </div>
-            <div class="view view-second">
-                <p>00</p>
-            </div>
-        </div>
-
-        <div class="button-container">
-            <div class="btn btn-hour">
-                <button class="decrease hour-decrease">-</button>
-                <button class="increase hour-increase">+</button>
-            </div>
-
-            <div class="btn btn-minute">
-                <button class="decrease minute-decrease">-</button>
-                <button class="increase minute-increase">+</button>
-            </div>
-
-            <div class="btn btn-second">
-                <button class="decrease second-decrease">-</button>
-                <button class="increase second-increase">+</button>
-            </div>
-        </div>
+            <script src="app.js"></script>
     </body>
-</html>
+    
+    </html>
