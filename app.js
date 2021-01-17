@@ -6,6 +6,8 @@ const view_hour = document.querySelector(".view-hour");
 const view_minute = document.querySelector(".view-minute");
 const view_second = document.querySelector(".view-second");
 
+const timer = document.querySelector(".timer-start");
+
 let hour=0,min=0,sec=0;
 
 decreaseS.forEach(function(decrease)
@@ -22,6 +24,8 @@ decreaseS.forEach(function(decrease)
             if(styles_d.contains("hour-decrease"))
             {
                 hour--;
+                if(hour < 0)
+                    hour = 23;
                 view_hour.textContent = detail(hour);
             }
             else if(styles_d.contains("minute-decrease"))
@@ -52,6 +56,8 @@ increaseS.forEach(function(btn)
             if(styles_i.contains("hour-increase"))
             {
                 hour++;
+                if(hour>23)
+                    hour=0;
                 view_hour.textContent = detail(hour);
             }
             else if(styles_i.contains("minute-increase"))
@@ -70,6 +76,38 @@ increaseS.forEach(function(btn)
         
     });
 });
+
+timer.addEventListener("click",function()
+{
+    console.log(hour,min,sec);
+
+    let time = setInterval(function()
+    {
+
+        sec--;
+        if(sec<0)
+        {
+            sec = 59;
+            min--;
+        }
+        if(min<0)
+        {
+            min=59;
+            hour--;
+        }
+        if(hour === 0 && min === 0 && sec === 0)
+        {
+            alert("END");
+            clearInterval(time);
+        }
+
+        view_hour.textContent = hour;
+        view_minute.textContent = min;
+        view_second.textContent = sec;
+
+    },1000);
+
+})
 
 function detail(value)
 {
