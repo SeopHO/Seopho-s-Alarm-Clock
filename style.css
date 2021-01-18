@@ -76,7 +76,29 @@ button
     font-size: 3rem;
 }
 
+.start
+{
+    min-width: 50vh;
+    /* margin:1vh; */
+    margin:0;
+    /* position: relative;
+    top:4vh; */
+    /* align-items: center; */
+
+}
 .timer-start
 {
-    font-size: 5rem;
+    font-size: 1.5rem;
+    background-color: #ffff;;
+    padding-left:0.7rem;
+    padding-right:0.7rem;
+    padding-top:0.2rem;
+    border-radius: 100%;
+    box-shadow: 0 2px 7px grey;
+}
+.timer-btn
+{
+   background: linear-gradient(#6cc1b6,#438698);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
