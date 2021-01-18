@@ -14,8 +14,17 @@
 
 .view
 {
-    margin:0.8rem;
-    font-size: 3rem;
+    margin:1.2rem;
+    padding:0rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    font-size: 5rem;
+    cursor: pointer;
+    color:#ffff;
+    /* background-color: black; */
+    font-weight: bold;
 }
 
 .clock-container
@@ -24,6 +33,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.box
+{
+    min-width: 50vh;
+    display: flex;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#6cc1b6,#438698);
+    border-radius: 2vh;
+    box-shadow: 0 5px 10px grey;
 }
 
 .button-container

@@ -39,7 +39,6 @@ function detail2(value)
     }
 }
 
-
 decreaseS.forEach(function(decrease)
 {
     decrease.addEventListener("click",function(event)
@@ -125,7 +124,6 @@ timer.addEventListener("click",function()
             hour--;
         }
         
-
         view_hour.textContent = detail(hour);
         view_minute.textContent = detail(min);
         view_second.textContent = detail(sec);
