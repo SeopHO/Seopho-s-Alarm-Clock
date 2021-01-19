@@ -130,4 +130,3 @@ timer.addEventListener("click",function()
     },1000);
 
 })
-

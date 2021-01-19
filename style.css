@@ -1,41 +1,41 @@
 *
 {
-    padding:0;
-    margin: 0;
+padding:0;
+margin: 0;
 }
 
 .container
 {
-    min-width:100vh;
-    height:90vh;
-    margin:0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+min-width:100vh;
+height:90vh;
+margin:0;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .clock-container
 {
-    width:35%;
-    height: 20vh;
-    background-color: aquamarine;
-    border-radius: 10px;
+width:35%;
+height: 20vh;
+background-color: aquamarine;
+border-radius: 10px;
 }
 
 .view-time
 {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
+display: flex;
+justify-content: center;
+justify-items: center;
 }
 
 .view
 {
-    font-size: 4vh;
-    margin: 25px;   
+font-size: 4vh;
+margin: 25px;
 }
 
 .view-dot
 {
-    font-size:8vh;
+font-size:8vh;
 }
