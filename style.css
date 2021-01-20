@@ -50,14 +50,12 @@ margin: 0;
 
 .start-btn
 {
-    
     display: flex;
     justify-content: flex-end;
     position: relative;
     left:10px;
     bottom:20px;
     cursor: pointer;
-
 }
 .start
 {
