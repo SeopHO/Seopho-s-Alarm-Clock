@@ -5,6 +5,7 @@ const view_minute = document.querySelector(".view-minute h1");
 const view_second = document.querySelector(".view-second h1");
 
 const start_btn = document.querySelector(".start-btn");
+const btn_design =document.querySelector(".start h2");
 
 let time_pos = null;
 
@@ -150,6 +151,22 @@ function detail(value)
         return value;
     }
 }
+
+function Check()
+{
+    if(clickCheck === false && keydonwCheck == false)
+    {
+        btn_design.textContent = "Ⅹ";
+    }
+}
+
+function init()
+{
+    Check();
+}
+
+init();
+
 
 
 
