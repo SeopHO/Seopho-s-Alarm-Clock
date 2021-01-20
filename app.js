@@ -7,6 +7,10 @@ const view_second = document.querySelector(".view-second h1");
 const start_btn = document.querySelector(".start-btn");
 const btn_design =document.querySelector(".start h2");
 
+const popup = document.getElementById("pop-up");
+const popUp = document.querySelector(".popUp");
+
+
 let time_pos = null;
 
 let clickCheck = false;
@@ -31,14 +35,17 @@ views.forEach(function(view)
         console.log(style);
         if(style.contains("view-hour"))
         {
+            popup.classList.toggle("popUp");
             time_pos=_HOUR;
         }
         else if(style.contains("view-minute"))
         {
+            popup.classList.toggle("popUp");
             time_pos = _MIN;
         }
         else if(style.contains("view-second"))
         {
+            popup.classList.toggle("popUp");
             time_pos = _SEC;
         }
         console.log(time_pos);
@@ -164,7 +171,6 @@ function Check()
 {
     if(clickCheck === false && keydonwCheck == false)
     {
-        btn_design.textContent = "Ⅹ";
     }
 }
 

@@ -21,7 +21,6 @@ margin: 0;
     background: linear-gradient(#7474BF,#348AC7);
     box-shadow: 0 5px 10px grey;
     border-radius: 20px;
-
 }
 
 .view-time
@@ -31,7 +30,6 @@ margin: 0;
     justify-items: center;
     position: relative;
     bottom:30px;
-    
 }
 
 .view
@@ -60,14 +58,14 @@ margin: 0;
 .start
 {
     min-width:3.5vh;
-    padding:5px 13px;
-    font-size: 1.5rem;
+    padding:1px 13px;
+    font-size: 2.5rem;
     background-color: #ffff;
     border-radius: 100%;
     box-shadow: 0 3px 10px grey;
 } 
 
-.start h2
+.start i
 {
     background: linear-gradient(#7474BF,#348AC7);
     -webkit-background-clip: text;
@@ -75,9 +73,29 @@ margin: 0;
 }
 .title
 {
+    position: relative;
     text-align: center;
+    font-size: 2.5vh;
+    color:#373737;
+    top:10vh;
 }
 
+#pop-up
+{
+    width:30vh;
+    height:10vh;
+
+    position: absolute;
+    top:30vh;
+}
+
+.popUp
+{
+    background-color: #444444;
+    border-radius: 20px;
+    transform: translateY(-2em);
+    transition: 1s;
+}
 
 
 
