@@ -18,7 +18,7 @@ margin: 0;
 {
     min-width:35%;
     min-height: 20vh;
-    background: linear-gradient(#6cc1b6,#438698);
+    background: linear-gradient(#7474BF,#348AC7);
     box-shadow: 0 5px 10px grey;
     border-radius: 20px;
 
@@ -69,7 +69,7 @@ margin: 0;
 
 .start h2
 {
-    background: linear-gradient(#6cc1b6,#438698);
+    background: linear-gradient(#7474BF,#348AC7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
