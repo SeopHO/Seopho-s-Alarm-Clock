@@ -54,11 +54,19 @@ window.addEventListener("keydown",function(event)
             console.log('위');
             increaseHandler();
             keydonwCheck=true;
+            if(clickCheck === true)
+            {
+                btn_design.textContent = "▶";
+            }
             break;
         case 40:
             console.log('아래');
             decreaseHandler();
             keydonwCheck=true;
+            if(clickCheck === true)
+            {
+                btn_design.textContent = "▶";
+            }
             break;
     }
 });
