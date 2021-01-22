@@ -7,7 +7,6 @@ const view_second = document.querySelector(".view-second h1");
 const start_btn = document.querySelector(".start-btn");
 const btn_design =document.querySelector(".start h2");
 
-
 let time_pos = null;
 
 let clickCheck = false;
@@ -33,17 +32,17 @@ views.forEach(function(view)
         if(style.contains("view-hour"))
         {
             time_pos=_HOUR;
-            drawPopup(style);
+            PopupCheck();
         }
         else if(style.contains("view-minute"))
         {
             time_pos = _MIN;
-            drawPopup();
+            PopupCheck();
         }
         else if(style.contains("view-second"))
         {
             time_pos = _SEC;
-            drawPopup();
+            PopupCheck();
         }
         console.log(time_pos);
         

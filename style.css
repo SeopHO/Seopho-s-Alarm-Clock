@@ -1,7 +1,7 @@
 *
 {
-padding:0;
-margin: 0;
+    padding:0;
+    margin: 0;
 }
 
 .container
@@ -55,6 +55,7 @@ margin: 0;
     bottom:20px;
     cursor: pointer;
 }
+
 .start
 {
     min-width:3.5vh;
@@ -71,6 +72,7 @@ margin: 0;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .title
 {
     position: relative;
@@ -82,12 +84,12 @@ margin: 0;
 
 #pop-up
 {
-    width:20vh;
+    width:25vh;
     height:8vh;
     border-radius: 10px;
     position: absolute;
     top:90vh;
-    right:1vh;
+    right:0.5vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -97,20 +99,26 @@ margin: 0;
 {
     background-color: #444444;
     transform: translateX(-2em);
-    transition: 0.7s;
+    transition: 0.5s ease;
 }
 
 .pop-up-text
 {
     text-align: center;
-    color: #fff;
+    /* color: #4444; */
     font-weight: 15;
     font-size: 2vh;
 }
 
+.pop-up-text-end
+{
+    
+}
+
+
 .fa-bell
 {
-    color:#fff;
+    /* color:#4444; */
 }
 
 
