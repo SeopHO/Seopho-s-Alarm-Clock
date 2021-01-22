@@ -7,14 +7,11 @@ const view_second = document.querySelector(".view-second h1");
 const start_btn = document.querySelector(".start-btn");
 const btn_design =document.querySelector(".start h2");
 
-const popup = document.getElementById("pop-up");
-const popUp = document.querySelector(".popUp");
-
 
 let time_pos = null;
 
 let clickCheck = false;
-let keydonwCheck = false; 
+let keydownCheck = false; 
 
 let hour_value=0;
 let min_value=0;
@@ -35,18 +32,18 @@ views.forEach(function(view)
         console.log(style);
         if(style.contains("view-hour"))
         {
-            popup.classList.toggle("popUp");
             time_pos=_HOUR;
+            drawPopup(style);
         }
         else if(style.contains("view-minute"))
         {
-            popup.classList.toggle("popUp");
             time_pos = _MIN;
+            drawPopup();
         }
         else if(style.contains("view-second"))
         {
-            popup.classList.toggle("popUp");
             time_pos = _SEC;
+            drawPopup();
         }
         console.log(time_pos);
         
@@ -60,7 +57,7 @@ window.addEventListener("keydown",function(event)
         case 38:
             console.log('위');
             increaseHandler();
-            keydonwCheck=true;
+            keydownCheck=true;
             if(clickCheck === true)
             {
                 btn_design.textContent = "▶";
@@ -69,7 +66,7 @@ window.addEventListener("keydown",function(event)
         case 40:
             console.log('아래');
             decreaseHandler();
-            keydonwCheck=true;
+            keydownCheck=true;
             if(clickCheck === true)
             {
                 btn_design.textContent = "▶";
@@ -80,7 +77,7 @@ window.addEventListener("keydown",function(event)
 
 start_btn.addEventListener("click", function () 
 {
-    if (clickCheck === true && keydonwCheck == true )
+    if (clickCheck === true && keydownCheck == true )
         if(hour_value != 0 || min_value != 0 || sec_value != 0)
         {
             let timer = setInterval(function () {
@@ -166,21 +163,6 @@ function detail(value)
         return value;
     }
 }
-
-function Check()
-{
-    if(clickCheck === false && keydonwCheck == false)
-    {
-    }
-}
-
-function init()
-{
-    Check();
-}
-
-init();
-
 
 
 
