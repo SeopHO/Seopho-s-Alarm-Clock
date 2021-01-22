@@ -5,12 +5,22 @@ const bellicon = document.querySelector(".fa-bell");
 bellicon.style.display='block';
 // popupText.style.display = 'none';
 
-let pre_time_pos;
+let pre_time_pos=null;
 
-function drawPopupText(value)
+
+function drawPopup(value)
 {
+    let rec;
+    popup.classList.toggle("popUp");
+
+    if(popup.classList.contains("popUp") === false)
+    {
+        popup.classList.add("newpopUp");
+    }
+
     popupText.textContent = `Select ${value}`;
 }
+
 function ErasePopupText()
 {
     popupText.style.display='none';
@@ -21,19 +31,18 @@ function PopupCheck()
     switch (time_pos) 
     {
         case _HOUR:
-            popup.classList.add("popUp");
-            drawPopupText(time_pos);
+            drawPopup(time_pos);
             break;
         case _MIN:
-            popup.classList.add("popUp");
-            drawPopupText(time_pos);
+             drawPopup(time_pos);
             break;
         case _SEC:
-            popup.classList.add("popUp");
-            drawPopupText(time_pos);
+            drawPopup(time_pos);
             break;
     }
 }
+
+
 
 
 

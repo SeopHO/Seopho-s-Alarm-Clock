@@ -44,6 +44,7 @@ body
     color:#ffff;
     font-weight: bold;
     cursor: pointer;
+    text-shadow: 0 10px 4px #4444;
 }
 
 .view-dot
@@ -106,6 +107,15 @@ body
     transform: translateX(-2em);
     transition: 0.5s ease;
 }
+
+.newpopUp
+{
+    /* display: none; */
+    background-color: red;
+    transform: translateX(-2em);
+    transition: 0.5s ease;
+}
+
 
 
 .popUp-erase
