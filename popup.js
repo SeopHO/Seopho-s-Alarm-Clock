@@ -1,24 +1,35 @@
 const popup = document.getElementById("pop-up");
+
+// const popUp = document.querySelector(".popUp");
+
 const popupText = document.querySelector(".pop-up-text");
 const bellicon = document.querySelector(".fa-bell");
 
 bellicon.style.display='block';
 // popupText.style.display = 'none';
 
-let pre_time_pos=null;
+let timeBtnCnt=0;
+let BtnCnt=0;
 
 
-function drawPopup(value)
+function drawPopup(text,CntValue)
 {
-    let rec;
-    popup.classList.toggle("popUp");
-
-    if(popup.classList.contains("popUp") === false)
+    // popup.classList.add("popUp"); 
+    // popup.classList.add("newpopUp"); 
+    if(CntValue%2===0)
+    { 
+        popup.classList.remove("newpopUp"); 
+        // popup.style.display='none';
+        popup.classList.add("popUp"); 
+    }
+    else if(CntValue%2===1)
     {
-        popup.classList.add("newpopUp");
+        popup.classList.remove("popUp"); 
+        // popup.style.display='none';
+        popup.classList.add("newpopUp"); 
     }
 
-    popupText.textContent = `Select ${value}`;
+    popupText.textContent = `Select ${text}`;
 }
 
 function ErasePopupText()
@@ -31,14 +42,18 @@ function PopupCheck()
     switch (time_pos) 
     {
         case _HOUR:
-            drawPopup(time_pos);
+            timeBtnCnt++;
+            drawPopup(time_pos, timeBtnCnt);
             break;
         case _MIN:
-             drawPopup(time_pos);
+            timeBtnCnt++;
+            drawPopup(time_pos, timeBtnCnt);
             break;
         case _SEC:
-            drawPopup(time_pos);
+            timeBtnCnt++;
+            drawPopup(time_pos, timeBtnCnt);
             break;
+
     }
 }
 

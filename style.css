@@ -95,7 +95,7 @@ body
     border-radius: 10px;
     position: absolute;
     top:90vh;
-    right:0.5vh;
+    right:5vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -104,24 +104,48 @@ body
 .popUp
 {
     background-color: #444444;
-    transform: translateX(-2em);
-    transition: 0.5s ease;
+    /* transform: translateX(-2em); */
+    animation-duration: 0.8s;
+    animation-name: fadein0;
+    transition: 0.8s ease;
+    /* animation-iteration-count: infinite; */
 }
 
 .newpopUp
 {
     /* display: none; */
     background-color: red;
-    transform: translateX(-2em);
-    transition: 0.5s ease;
+    /* transform: translateX(-2em); */
+    animation-duration: 0.8s ;
+    animation-name: fadein1;
+    transition: 0.8s ease;
+    /* animation-iteration-count: infinite; */
+
 }
 
-
-
-.popUp-erase
+@keyframes fadein0
 {
-    display: none;
+    from
+    {
+        transform: translateX(20em);
+    }
+    to
+    {
+        transform: translateX(-0.1vh);
+    }
 }
+@keyframes fadein1
+{
+    from
+    {
+        transform: translateX(20em);
+    }
+    to
+    {
+        transform: translateX(-0.1vh);
+    }
+}
+
 
 .pop-up-text
 {
