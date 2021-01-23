@@ -103,22 +103,22 @@ body
 
 .popUp
 {
-    background-color: #444444;
+    background-color: #68C545;
     /* transform: translateX(-2em); */
     animation-duration: 0.8s;
     animation-name: fadein0;
-    transition: 0.8s ease;
+    /* transition: 0.8s ease; */
     /* animation-iteration-count: infinite; */
 }
 
 .newpopUp
 {
     /* display: none; */
-    background-color: red;
+    background-color: #68C545;
     /* transform: translateX(-2em); */
-    animation-duration: 0.8s ;
+    animation-duration: 0.8s;
     animation-name: fadein1;
-    transition: 0.8s ease;
+    /* transition: 0.8s ease; */
     /* animation-iteration-count: infinite; */
 
 }
@@ -128,10 +128,12 @@ body
     from
     {
         transform: translateX(20em);
+
     }
     to
     {
         transform: translateX(-0.1vh);
+        transition-timing-function: ease;
     }
 }
 @keyframes fadein1
@@ -139,10 +141,12 @@ body
     from
     {
         transform: translateX(20em);
+
     }
     to
     {
         transform: translateX(-0.1vh);
+        transition-timing-function: ease;
     }
 }
 
@@ -159,5 +163,11 @@ body
 {
     color:#fff;
 }
+
+/* .fa-minus
+{
+    transform: scale(100px);
+    transform: rotate(90deg);
+} */
 
 
