@@ -5,7 +5,6 @@ const view_minute = document.querySelector(".view-minute h1");
 const view_second = document.querySelector(".view-second h1");
 
 const start_btn = document.querySelector(".start-btn");
-const btn_design =document.querySelector(".start h2");
 
 let time_pos = null;
 
@@ -21,8 +20,16 @@ const _MIN = "minute";
 const _SEC = "second";
 
 const _WRONG = "wrong";
-
 const _START = "start";
+
+const _PAUSE = "pause";
+
+let buttonStatus=_WRONG;
+
+window.addEventListener("load",function()
+{
+    buttonCheck();
+});
 
 views.forEach(function(view)
 {
@@ -58,21 +65,24 @@ window.addEventListener("keydown",function(event)
     switch(event.keyCode)
     {
         case 38:
-            console.log('위');
+            // console.log('위');
             increaseHandler();
             keydownCheck=true;
             if(clickCheck === true)
             {
-                btn_design.textContent = "▶";
+                // btn_design.classList.add("fa-play");
+                buttonStatus= _START;
+                buttonCheck();
             }
             break;
         case 40:
-            console.log('아래');
+            // console.log('아래');
             decreaseHandler();
             keydownCheck=true;
             if(clickCheck === true)
             {
-                btn_design.textContent = "▶";
+                buttonStatus= _START;
+                buttonCheck();
             }
             break;
     }
@@ -84,7 +94,10 @@ start_btn.addEventListener("click", function ()
     {
         time_pos = _START;
         PopupCheck();
-        let timer = setInterval(function () {
+        buttonStatus = _PAUSE;
+        buttonCheck();
+        let timer = setInterval(function () 
+        {
             sec_value--;
             if (sec_value < 0) {
                 min_value--;
@@ -97,19 +110,22 @@ start_btn.addEventListener("click", function ()
             view_second.textContent = detail(sec_value);
             view_minute.textContent = detail(min_value);
             view_hour.textContent = detail(hour_value);
-            if (hour_value === 0 && min_value === 0 && sec_value === 0) {
+            if (hour_value === 0 && min_value === 0 && sec_value === 0) 
+            {
+                buttonStatus = _WRONG;
+                buttonCheck();
                 clearInterval(timer);
             }
         }, 1000);
-
     }
+
     else 
     {
         time_pos = _WRONG;
         PopupCheck();
     }
 });
-    
+
 function increaseHandler()
 {
     switch(time_pos)

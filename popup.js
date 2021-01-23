@@ -56,6 +56,10 @@ function PopupCheck()
             timeBtnCnt++;
             drawPopup(time_pos=`Timer Start`,BtnCnt);
             break;
+        case _PAUSE:
+            timeBtnCnt++;
+            drawPopup(time_pos=`Timer Pause`,BtnCnt);
+            break;
     }
 }
 

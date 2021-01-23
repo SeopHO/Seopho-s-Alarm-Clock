@@ -106,7 +106,7 @@ body
     background-color: #68C545;
     /* transform: translateX(-2em); */
     animation-duration: 0.8s;
-    animation-name: fadein0;
+    animation-name: slidein0;
     /* transition: 0.8s ease; */
     /* animation-iteration-count: infinite; */
 }
@@ -117,13 +117,13 @@ body
     background-color: #68C545;
     /* transform: translateX(-2em); */
     animation-duration: 0.8s;
-    animation-name: fadein1;
+    animation-name: slidein1;
     /* transition: 0.8s ease; */
     /* animation-iteration-count: infinite; */
 
 }
 
-@keyframes fadein0
+@keyframes slidein0
 {
     from
     {
@@ -136,7 +136,7 @@ body
         transition-timing-function: ease;
     }
 }
-@keyframes fadein1
+@keyframes slidein1
 {
     from
     {
@@ -157,6 +157,24 @@ body
     color: #fff;
     font-weight: 15;
     font-size: 2vh;
+}
+
+.fa
+{
+    animation-duration: 0.5s;
+    animation: fadein;
+}
+
+@keyframes fadein
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
 }
 
 .fa-bell
