@@ -7,7 +7,6 @@ const view_second = document.querySelector(".view-second h1");
 const start_btn = document.querySelector(".start-btn");
 
 let time_pos = null;
-
 let clickCheck = false;
 let keydownCheck = false; 
 
