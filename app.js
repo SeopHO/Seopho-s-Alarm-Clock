@@ -18,13 +18,13 @@ let sec_value=0;
 const _HOUR = "hour";
 const _MIN = "minute";
 const _SEC = "second";
-
 const _WRONG = "wrong";
 const _START = "start";
-
 const _PAUSE = "pause";
 
 let buttonStatus=_WRONG;
+
+let pause_mode = false;
 
 window.addEventListener("load",function()
 {
@@ -56,7 +56,6 @@ views.forEach(function(view)
             PopupCheck();
         }
         console.log(time_pos);
-        
     })
 });
 
@@ -90,7 +89,7 @@ window.addEventListener("keydown",function(event)
 
 start_btn.addEventListener("click", function () 
 {
-    if (clickCheck === true && keydownCheck == true && (hour_value != 0 || min_value != 0 || sec_value != 0)) 
+    if(clickCheck === true && keydownCheck == true && (hour_value != 0 || min_value != 0 || sec_value != 0)) 
     {
         time_pos = _START;
         PopupCheck();
@@ -99,18 +98,20 @@ start_btn.addEventListener("click", function ()
         let timer = setInterval(function () 
         {
             sec_value--;
-            if (sec_value < 0) {
+            if (sec_value < 0) 
+            {
                 min_value--;
                 sec_value = 59;
             }
-            if (min_value < 0) {
+            if (min_value < 0) 
+            {
                 hour_value--;
                 min_value = 59;
             }
             view_second.textContent = detail(sec_value);
             view_minute.textContent = detail(min_value);
             view_hour.textContent = detail(hour_value);
-            if (hour_value === 0 && min_value === 0 && sec_value === 0) 
+            if(hour_value === 0 && min_value === 0 && sec_value === 0) 
             {
                 buttonStatus = _WRONG;
                 buttonCheck();
@@ -118,7 +119,6 @@ start_btn.addEventListener("click", function ()
             }
         }, 1000);
     }
-
     else 
     {
         time_pos = _WRONG;
