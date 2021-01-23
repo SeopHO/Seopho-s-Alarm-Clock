@@ -5,7 +5,6 @@ const bellicon = document.querySelector(".fa-bell");
 
 bellicon.style.display='block';
 
-
 let timeBtnCnt=0;
 let BtnCnt=0;
 
