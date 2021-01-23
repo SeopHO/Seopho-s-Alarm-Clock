@@ -1,35 +1,31 @@
 const popup = document.getElementById("pop-up");
 
-// const popUp = document.querySelector(".popUp");
-
 const popupText = document.querySelector(".pop-up-text");
 const bellicon = document.querySelector(".fa-bell");
 
 bellicon.style.display='block';
-// popupText.style.display = 'none';
+
 
 let timeBtnCnt=0;
 let BtnCnt=0;
 
-
 function drawPopup(text,CntValue)
 {
-    // popup.classList.add("popUp"); 
-    // popup.classList.add("newpopUp"); 
     if(CntValue%2===0)
     { 
         popup.classList.remove("newpopUp"); 
-        // popup.style.display='none';
         popup.classList.add("popUp"); 
     }
     else if(CntValue%2===1)
     {
         popup.classList.remove("popUp"); 
-        // popup.style.display='none';
         popup.classList.add("newpopUp"); 
     }
 
-    popupText.textContent = `Select ${text}`;
+    if(text === _HOUR || text === _MIN || text === _SEC)
+        popupText.textContent = `Select ${text}`;
+    else
+        popupText.textContent = `${text}`;
 }
 
 function ErasePopupText()
@@ -53,7 +49,14 @@ function PopupCheck()
             timeBtnCnt++;
             drawPopup(time_pos, timeBtnCnt);
             break;
-
+        case _WRONG:
+            timeBtnCnt++;
+            drawPopup(time_pos=`You don't have set Time`,BtnCnt);
+            break;
+        case _START:
+            timeBtnCnt++;
+            drawPopup(time_pos=`Timer Start`,BtnCnt);
+            break;
     }
 }
 
