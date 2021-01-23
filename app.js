@@ -41,7 +41,7 @@ views.forEach(function(view)
         console.log(style);
         if(style.contains("view-hour"))
         {
-            time_pos=_HOUR;
+            time_pos = _HOUR;
             PopupCheck();
         }
         else if(style.contains("view-minute"))
@@ -68,7 +68,6 @@ window.addEventListener("keydown",function(event)
             keydownCheck=true;
             if(clickCheck === true)
             {
-                // btn_design.classList.add("fa-play");
                 buttonStatus= _START;
                 buttonCheck();
             }
@@ -94,7 +93,7 @@ start_btn.addEventListener("click", function ()
         PopupCheck();
         buttonStatus = _PAUSE;
         buttonCheck();
-        let timer = setInterval(function () 
+        let timer = setInterval(function() 
         {
             sec_value--;
             if (sec_value < 0) 

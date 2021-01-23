@@ -27,11 +27,6 @@ function drawPopup(text,CntValue)
         popupText.textContent = `${text}`;
 }
 
-function ErasePopupText()
-{
-    popupText.style.display='none';
-}
-
 function PopupCheck() 
 {
     switch (time_pos) 
