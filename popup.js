@@ -27,7 +27,7 @@ function drawPopup(text,CntValue)
         popupText.textContent = `${text}`;
 }
 
-function PopupCheck() 
+function PopupCheck_time() 
 {
     switch (timer.time_select) 
     {
@@ -43,18 +43,26 @@ function PopupCheck()
             timeBtnCnt++;
             drawPopup(timer.time_select, timeBtnCnt);
             break;
-        case _WRONG:
-            timeBtnCnt++;
-            drawPopup(timer.time_select=`You don't have set Time`,BtnCnt);
-            break;
-        case _START:
-            timeBtnCnt++;
-            drawPopup(timer.time_select=`Timer Start`,BtnCnt);
-            break;
-        case _PAUSE:
-            timeBtnCnt++;
-            drawPopup(timer.time_select=`Timer Pause`,BtnCnt);
-            break;
+
+    }
+}
+
+function PopupCheck_btn()
+{
+    if(timer.wrong_button)
+    {
+        timeBtnCnt++;
+        drawPopup('You dont have set Time',timeBtnCnt);
+    }
+    else if(timer.operate_button)
+    {
+        timeBtnCnt++;
+        drawPopup('Timer Start',timeBtnCnt);
+    }
+    else if(timer.pause_button)
+    {
+        timeBtnCnt++;
+        drawPopup('Timer Pause',timeBtnCnt);
     }
 }
 

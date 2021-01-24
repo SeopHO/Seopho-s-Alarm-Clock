@@ -5,7 +5,7 @@ window.addEventListener("load",function()
     buttonCheck();
 });
 
-views.forEach(function (view) 
+views.forEach(function(view) 
 {
     view.addEventListener("click", function(event) 
     {
@@ -18,15 +18,15 @@ views.forEach(function (view)
             // console.log(style);
             if (style.contains("view-hour")) {
                 timer.time_select = _HOUR;
-                PopupCheck();
+                PopupCheck_time();
             }
             else if (style.contains("view-minute")) {
                 timer.time_select = _MIN;
-                PopupCheck();
+                PopupCheck_time();
             }
             else if (style.contains("view-second")) {
                 timer.time_select = _SEC;
-                PopupCheck();
+                PopupCheck_time();
             }
             console.log(timer.time_select);
         }
@@ -80,19 +80,23 @@ button.addEventListener("click", function(event)
     console.log(style);
     if(style.contains("fa-times"))
     {
-        
+        buttonCheck();
     }
     else if(style.contains("fa-play"))
     {
-        buttonReset();
-        timer.pause_button = true;
+        buttonReset();  
+        timer.operate_button = true;
         buttonCheck();
+        buttonReset();  
+        timer.pause_button = true;
+        PopupCheck_btn();
     }
     else if(style.contains("fa-pause"))
     {
         buttonReset();
-        timer.operate_button = true;
+        timer.pause_button = true;
         buttonCheck();
+        PopupCheck_btn();
     }
     if(timer.clickCheck === true && timer.keydownCheck == true && (timer.hour_value != 0 || timer.min_value != 0 || timer.sec_value != 0)) 
     {
