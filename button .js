@@ -1,22 +1,21 @@
 const btn_design =document.querySelector(".start i");
 
-// const buttonStatus=[_WRONG,_START,_PAUSE];
-
 function buttonCheck()
 {
     btnclassReset();
-    switch(buttonStatus)
+    if(timer.wrong_button)
     {
-        case _WRONG:
-            btn_design.classList.add("fa-times");
-            break;
-        case _START:
-            btn_design.classList.add("fa-play");
-            break;
-        case _PAUSE:
-            btn_design.classList.add("fa-pause");
-            break;
+        btn_design.classList.add("fa-times");
     }
+    else if(timer.operate_button)
+    {
+        btn_design.classList.add("fa-play");
+    }
+    else if(timer.pause_button)
+    {
+        btn_design.classList.add("fa-pause");
+    }
+
 }
 
 function btnclassReset()

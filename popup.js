@@ -29,31 +29,31 @@ function drawPopup(text,CntValue)
 
 function PopupCheck() 
 {
-    switch (time_pos) 
+    switch (timer.time_select) 
     {
         case _HOUR:
             timeBtnCnt++;
-            drawPopup(time_pos, timeBtnCnt);
+            drawPopup(timer.time_select, timeBtnCnt);
             break;
         case _MIN:
             timeBtnCnt++;
-            drawPopup(time_pos, timeBtnCnt);
+            drawPopup(timer.time_select, timeBtnCnt);
             break;
         case _SEC:
             timeBtnCnt++;
-            drawPopup(time_pos, timeBtnCnt);
+            drawPopup(timer.time_select, timeBtnCnt);
             break;
         case _WRONG:
             timeBtnCnt++;
-            drawPopup(time_pos=`You don't have set Time`,BtnCnt);
+            drawPopup(timer.time_select=`You don't have set Time`,BtnCnt);
             break;
         case _START:
             timeBtnCnt++;
-            drawPopup(time_pos=`Timer Start`,BtnCnt);
+            drawPopup(timer.time_select=`Timer Start`,BtnCnt);
             break;
         case _PAUSE:
             timeBtnCnt++;
-            drawPopup(time_pos=`Timer Pause`,BtnCnt);
+            drawPopup(timer.time_select=`Timer Pause`,BtnCnt);
             break;
     }
 }
