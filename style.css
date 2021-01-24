@@ -99,6 +99,7 @@ body
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
 }
 
 .popUp
@@ -111,6 +112,11 @@ body
     /* animation-iteration-count: infinite; */
 }
 
+.del-popUp
+{
+    background-color: red;
+}
+
 .newpopUp
 {
     /* display: none; */
@@ -121,6 +127,11 @@ body
     /* transition: 0.8s ease; */
     /* animation-iteration-count: infinite; */
 
+}
+
+.del-newpopUp
+{
+    background-color: red;
 }
 
 @keyframes slidein0
@@ -161,7 +172,7 @@ body
 
 .fa
 {
-    animation-duration: 0.5s;
+    animation-duration: 2s;
     animation: fadein;
 }
 

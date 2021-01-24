@@ -63,5 +63,23 @@ function PopupCheck_btn()
             timeBtnCnt++;
             drawPopup('Timer Pause',timeBtnCnt);
             break;
+        case _OVER:
+            timeBtnCnt++;
+            drawPopup('Time Over!!',timeBtnCnt);
+            break;
     }
 }
+
+popup.addEventListener("click",function(event)
+{
+    let style = event.currentTarget.classList;
+    console.log(style);
+    if(style.contains("popUp"))
+    {
+        popup.classList.remove("popUp");
+    }
+    if(style.contains("newpopUp"))
+    {
+        popup.classList.remove("newpopUp"); 
+    }
+});

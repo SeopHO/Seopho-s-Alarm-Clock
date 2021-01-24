@@ -44,6 +44,12 @@ window.addEventListener("keydown",function(event)
                     timer.button_select = _START;
                     buttonCheck();
                     increaseHandler();
+                    if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0)
+                    {
+                        timer.keydownCheck=false;
+                        timer.button_select=_WRONG;
+                        buttonCheck();
+                    }
                 }
                 break;
             case 40: //down          
@@ -53,6 +59,12 @@ window.addEventListener("keydown",function(event)
                     timer.button_select = _START;
                     buttonCheck();
                     decreaseHandler();
+                    if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0)
+                    {
+                        timer.keydownCheck=false;
+                        timer.button_select=_WRONG;
+                        buttonCheck();
+                    }
                 }
                 break;
         }
@@ -133,6 +145,8 @@ function modeCheck()
                 timer.mode_select=_WRONG;
                 timer.button_select = _WRONG;
                 buttonCheck();
+                timer.popup_select=_OVER;
+                PopupCheck_btn();
                 clearInterval(interval);
             }
         },timer.mode_select === _PAUSE ? 10 : 1000);

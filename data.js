@@ -22,6 +22,7 @@ const _SEC = "second";
 const _WRONG = "wrong";
 const _START = "start";
 const _PAUSE = "pause";
+const _OVER = "over";
 
 const views = document.querySelectorAll(".view");
 const button = document.querySelector(".button");
