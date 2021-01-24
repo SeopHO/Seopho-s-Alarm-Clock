@@ -9,7 +9,7 @@ views.forEach(function(view)
 {
     view.addEventListener("click", function(event) 
     {
-        if(timer.mode_select === _WRONG) //add timer.mode_select === _PAUSE
+        if(timer.mode_select === _WRONG || timer.mode_select === _PAUSE) //add timer.mode_select === _PAUSE
         {
             timer.clickCheck = true;
             // console.log(clickCheck);
@@ -35,7 +35,7 @@ views.forEach(function(view)
 
 window.addEventListener("keydown",function(event)
 {
-    if(timer.mode_select === _WRONG) //add timer.mode_select === _PAUSE
+    if(timer.mode_select === _WRONG || timer.mode_select === _PAUSE) //add timer.mode_select === _PAUSE
     {
         switch(event.keyCode)
         {
@@ -126,7 +126,7 @@ function modeCheck()
     {
         case _START:
             interval = setInterval(function(){
-                
+                timerhandler();
                 if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0) 
                 {
                     timer.mode_select=_WRONG;
@@ -138,7 +138,7 @@ function modeCheck()
                 {
                     clearInterval(interval);
                 }
-                timerhandler();
+                
             },1000);
             break;
     }
