@@ -30,7 +30,6 @@ views.forEach(function(view)
             }
             console.log(timer.time_select);
         }
-
     })
 });
 
