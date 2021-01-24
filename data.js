@@ -12,6 +12,10 @@ const timer={
     sec_value:0,
 }
 
+let save_hour_value;
+let save_min_value;
+let save_sec_value;
+
 const _HOUR = "hour";
 const _MIN = "minute";
 const _SEC = "second";

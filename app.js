@@ -9,7 +9,7 @@ views.forEach(function(view)
 {
     view.addEventListener("click", function(event) 
     {
-        if(timer.mode_select === _WRONG)
+        if(timer.mode_select === _WRONG) //add timer.mode_select === _PAUSE
         {
             timer.clickCheck = true;
             // console.log(clickCheck);
@@ -36,7 +36,7 @@ views.forEach(function(view)
 
 window.addEventListener("keydown",function(event)
 {
-    if(timer.mode_select === _WRONG)
+    if(timer.mode_select === _WRONG) //add timer.mode_select === _PAUSE
     {
         switch(event.keyCode)
         {
@@ -66,6 +66,7 @@ window.addEventListener("keydown",function(event)
 
 button.addEventListener("click", function(event) 
 {
+    let pauseClick;
     const style = event.currentTarget.classList;
     console.log(style);
     if(style.contains("fa-times"))
@@ -104,14 +105,27 @@ button.addEventListener("click", function(event)
                 buttonCheck();
                 clearInterval(interval);
             }
+            else if(pauseClick === true)
+            {
+                timer.mode_select = _PAUSE;
+                timer.button_select = _START;
+                buttonCheck();
+                timer.popup_select = _PAUSE;
+                PopupCheck_btn();
+
+                clearInterval(interval);
+            }
         }, 1000);
     }
     else if(style.contains("fa-pause"))
     {
-        timer.button_select = _START;
-        buttonCheck();
-        timer.popup_select = _PAUSE;
-        PopupCheck_btn();
+        // timer.mode_select = _PAUSE;
+        // timer.button_select = _START;
+        // buttonCheck();
+        // timer.popup_select = _PAUSE;
+        // PopupCheck_btn();
+        pauseClick = true;
+        console.log(pauseClick);
     }
 
 });
