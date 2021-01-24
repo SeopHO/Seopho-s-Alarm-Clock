@@ -9,13 +9,11 @@ views.forEach(function(view)
 {
     view.addEventListener("click", function(event) 
     {
-        if(timer.mode_select === _WRONG || timer.mode_select === _PAUSE) //add timer.mode_select === _PAUSE
+        if(timer.mode_select === _WRONG || timer.mode_select === _PAUSE)
         {
             timer.clickCheck = true;
-            // console.log(clickCheck);
     
             const style = event.currentTarget.classList;
-            // console.log(style);
             if (style.contains("view-hour")) {
                 timer.time_select = _HOUR;
                 PopupCheck_time();
@@ -35,22 +33,20 @@ views.forEach(function(view)
 
 window.addEventListener("keydown",function(event)
 {
-    if(timer.mode_select === _WRONG || timer.mode_select === _PAUSE) //add timer.mode_select === _PAUSE
+    if(timer.mode_select === _WRONG || timer.mode_select === _PAUSE)
     {
         switch(event.keyCode)
         {
-            case 38:
-                // console.log('위');
+            case 38: //up
                 if(timer.clickCheck === true)
                 {
-                    timer.keydownCheck=true;
+                    timer.keydownCheck= true;
                     timer.button_select = _START;
                     buttonCheck();
                     increaseHandler();
                 }
                 break;
-            case 40:
-                // console.log('아래');            
+            case 40: //down          
                 if(timer.clickCheck === true)
                 {
                     timer.keydownCheck=true;
@@ -122,25 +118,24 @@ function timerhandler()
 function modeCheck()
 {
     let interval;
-    switch(timer.mode_select)
+    if(timer.mode_select === _START)
     {
-        case _START:
-            interval = setInterval(function(){
-                timerhandler();
-                if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0) 
-                {
-                    timer.mode_select=_WRONG;
-                    timer.button_select = _WRONG;
-                    buttonCheck();
-                    clearInterval(interval);
-                }
-                else if(timer.mode_select === _PAUSE)
-                {
-                    clearInterval(interval);
-                }
-                
-            },1000);
-            break;
+        interval = setInterval(function()
+        {
+            timerhandler();
+            if(timer.mode_select === _PAUSE)
+            {
+                console.log('stop!');
+                clearInterval(interval);
+            }
+            if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0) 
+            {
+                timer.mode_select=_WRONG;
+                timer.button_select = _WRONG;
+                buttonCheck();
+                clearInterval(interval);
+            }
+        },timer.mode_select === _PAUSE ? 10 : 1000);
     }
 }
 
