@@ -49,26 +49,21 @@ function PopupCheck_time()
 
 function PopupCheck_btn()
 {
-    if(timer.wrong_button)
+    switch(timer.popup_select)
     {
-        timeBtnCnt++;
-        drawPopup('You dont have set Time',timeBtnCnt);
-    }
-    else if(timer.operate_button)
-    {
-        timeBtnCnt++;
-        drawPopup('Timer Start',timeBtnCnt);
-    }
-    else if(timer.pause_button)
-    {
-        timeBtnCnt++;
-        drawPopup('Timer Pause',timeBtnCnt);
+        case _WRONG:
+            timeBtnCnt++;
+            drawPopup('You dont have set Time',timeBtnCnt);
+            break;
+        case _START:
+            timeBtnCnt++;
+            drawPopup('Timer Start',timeBtnCnt);
+            break;
+        case _PAUSE:
+            timeBtnCnt++;
+            drawPopup('Timer Pause',timeBtnCnt);
+            break;
+        
+        
     }
 }
-
-
-
-
-
-
-

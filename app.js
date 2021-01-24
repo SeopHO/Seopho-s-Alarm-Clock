@@ -1,5 +1,3 @@
-
-
 window.addEventListener("load",function()
 {
     buttonCheck();
@@ -81,21 +79,23 @@ button.addEventListener("click", function(event)
     if(style.contains("fa-times"))
     {
         buttonCheck();
+        timer.popup_select = _WRONG;
+        PopupCheck_btn();
     }
     else if(style.contains("fa-play"))
     {
         buttonReset();  
-        timer.operate_button = true;
-        buttonCheck();
-        buttonReset();  
         timer.pause_button = true;
+        buttonCheck();
+        timer.popup_select = _START;
         PopupCheck_btn();
     }
     else if(style.contains("fa-pause"))
     {
         buttonReset();
-        timer.pause_button = true;
+        timer.operate_button = true;
         buttonCheck();
+        timer.popup_select = _PAUSE;
         PopupCheck_btn();
     }
     if(timer.clickCheck === true && timer.keydownCheck == true && (timer.hour_value != 0 || timer.min_value != 0 || timer.sec_value != 0)) 

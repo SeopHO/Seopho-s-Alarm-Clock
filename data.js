@@ -8,6 +8,7 @@ const timer={
     operate_button:false,
 
     time_select:null,
+    popup_select:null,
 
     keydownCheck:false,
     clickCheck:false,
