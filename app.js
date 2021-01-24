@@ -127,7 +127,7 @@ function modeCheck()
     {
         case _START:
             interval = setInterval(function(){
-                timerhandler();
+                
                 if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0) 
                 {
                     timer.mode_select=_WRONG;
@@ -139,6 +139,7 @@ function modeCheck()
                 {
                     clearInterval(interval);
                 }
+                timerhandler();
             },1000);
             break;
     }
