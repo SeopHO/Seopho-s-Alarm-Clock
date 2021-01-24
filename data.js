@@ -1,12 +1,6 @@
 const timer={
-    wrong_mode:true,
-    pause_mode:false,
-    operate_mode:false,
-    
-    wrong_button:true,
-    pause_button:false,
-    operate_button:false,
-
+    mode_select:null,
+    button_select:null,
     time_select:null,
     popup_select:null,
 
@@ -24,7 +18,6 @@ const _SEC = "second";
 const _WRONG = "wrong";
 const _START = "start";
 const _PAUSE = "pause";
-
 
 const views = document.querySelectorAll(".view");
 const button = document.querySelector(".button");

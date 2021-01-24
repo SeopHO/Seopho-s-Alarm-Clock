@@ -1,13 +1,15 @@
 window.addEventListener("load",function()
 {
+    timer.button_select = _WRONG;
     buttonCheck();
+    timer.mode_select = _WRONG;
 });
 
 views.forEach(function(view) 
 {
     view.addEventListener("click", function(event) 
     {
-        if(timer.wrong_mode === true)
+        if(timer.mode_select === _WRONG)
         {
             timer.clickCheck = true;
             // console.log(clickCheck);
@@ -30,19 +32,11 @@ views.forEach(function(view)
         }
 
     })
-
 });
-
-function buttonReset()
-{
-    timer.wrong_button = false;
-    timer.operate_button = false;
-    timer.pause_button = false;
-}
 
 window.addEventListener("keydown",function(event)
 {
-    if(timer.wrong_mode === true)
+    if(timer.mode_select === _WRONG)
     {
         switch(event.keyCode)
         {
@@ -51,8 +45,7 @@ window.addEventListener("keydown",function(event)
                 if(timer.clickCheck === true)
                 {
                     timer.keydownCheck=true;
-                    buttonReset();
-                    timer.operate_button = true;
+                    timer.button_select = _START;
                     buttonCheck();
                     increaseHandler();
                 }
@@ -62,8 +55,7 @@ window.addEventListener("keydown",function(event)
                 if(timer.clickCheck === true)
                 {
                     timer.keydownCheck=true;
-                    buttonReset();
-                    timer.operate_button = true;
+                    timer.button_select = _START;
                     buttonCheck();
                     decreaseHandler();
                 }
@@ -84,8 +76,8 @@ button.addEventListener("click", function(event)
     }
     else if(style.contains("fa-play"))
     {
-        buttonReset();  
-        timer.pause_button = true;
+        timer.mode_select = _START;
+        timer.button_select = _PAUSE;
         buttonCheck();
         timer.popup_select = _START;
         PopupCheck_btn();
@@ -108,8 +100,7 @@ button.addEventListener("click", function(event)
             view_hour.textContent = detail(timer.hour_value);
             if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0) 
             {
-                buttonReset();
-                timer.wrong_button = true;
+                timer.button_select = _WRONG;
                 buttonCheck();
                 clearInterval(interval);
             }
@@ -117,24 +108,12 @@ button.addEventListener("click", function(event)
     }
     else if(style.contains("fa-pause"))
     {
-        buttonReset();
-        timer.operate_button = true;
+        timer.button_select = _START;
         buttonCheck();
         timer.popup_select = _PAUSE;
         PopupCheck_btn();
     }
-    if(timer.clickCheck === true && timer.keydownCheck == true && (timer.hour_value != 0 || timer.min_value != 0 || timer.sec_value != 0)) 
-    {
-        timer.time_select = _START;
-        PopupCheck();
-        buttonStatus = _PAUSE;
-        buttonCheck();
-    }
-    else 
-    {
-        timer.time_select = _WRONG;
-        PopupCheck();
-    }
+
 });
 
 function increaseHandler()

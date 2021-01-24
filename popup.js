@@ -63,7 +63,5 @@ function PopupCheck_btn()
             timeBtnCnt++;
             drawPopup('Timer Pause',timeBtnCnt);
             break;
-        
-        
     }
 }
