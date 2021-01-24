@@ -71,9 +71,12 @@ button.addEventListener("click", function(event)
     console.log(style);
     if(style.contains("fa-times"))
     {
+        timer.mode_select = _WRONG;
         buttonCheck();
         timer.popup_select = _WRONG;
         PopupCheck_btn();
+
+        modeCheck();
     }
     else if(style.contains("fa-play"))
     {
@@ -83,52 +86,63 @@ button.addEventListener("click", function(event)
         timer.popup_select = _START;
         PopupCheck_btn();
 
-        let interval = setInterval(function() 
-        {
-            timer.sec_value--;
-            if (timer.sec_value < 0) 
-            {
-                timer.min_value--;
-                timer.sec_value = 59;
-            }
-            if (timer.min_value < 0) 
-            {
-                timer.hour_value--;
-                timer.min_value = 59;
-            }
-            view_second.textContent = detail(timer.sec_value);
-            view_minute.textContent = detail(timer.min_value);
-            view_hour.textContent = detail(timer.hour_value);
-            if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0) 
-            {
-                timer.button_select = _WRONG;
-                buttonCheck();
-                clearInterval(interval);
-            }
-            else if(pauseClick === true)
-            {
-                timer.mode_select = _PAUSE;
-                timer.button_select = _START;
-                buttonCheck();
-                timer.popup_select = _PAUSE;
-                PopupCheck_btn();
-
-                clearInterval(interval);
-            }
-        }, 1000);
+        modeCheck();
     }
     else if(style.contains("fa-pause"))
     {
-        // timer.mode_select = _PAUSE;
-        // timer.button_select = _START;
-        // buttonCheck();
-        // timer.popup_select = _PAUSE;
-        // PopupCheck_btn();
-        pauseClick = true;
+        timer.mode_select = _PAUSE;
+        timer.button_select = _START;
+        buttonCheck();
+        timer.popup_select = _PAUSE;
+        PopupCheck_btn();
         console.log(pauseClick);
+        timer.mode_select = _PAUSE;
+        
+        modeCheck();
     }
-
 });
+
+function timerhandler()
+{
+    timer.sec_value--;
+    if (timer.sec_value < 0)
+    {
+        timer.min_value--;
+        timer.sec_value = 59;
+    }
+    if (timer.min_value < 0)
+    {
+        timer.hour_value--;
+        timer.min_value = 59;
+    }
+    view_second.textContent = detail(timer.sec_value);
+    view_minute.textContent = detail(timer.min_value);
+    view_hour.textContent = detail(timer.hour_value);
+}
+
+function modeCheck()
+{
+    let interval;
+    switch(timer.mode_select)
+    {
+        case _START:
+            interval = setInterval(function(){
+                timerhandler();
+                if(timer.hour_value === 0 && timer.min_value === 0 && timer.sec_value === 0) 
+                {
+                    timer.mode_select=_WRONG;
+                    timer.button_select = _WRONG;
+                    buttonCheck();
+                    clearInterval(interval);
+                }
+                else if(timer.mode_select === _PAUSE)
+                {
+                    clearInterval(interval);
+                }
+            },1000);
+            break;
+    }
+}
 
 function increaseHandler()
 {
