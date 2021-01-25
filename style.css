@@ -7,6 +7,11 @@
 body
 {
     overflow: hidden;
+        
+    /* background-image: url("bg1.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat; */
 }
 
 .container
@@ -26,6 +31,11 @@ body
     background: linear-gradient(#7474BF,#348AC7);
     box-shadow: 0 5px 10px grey;
     border-radius: 20px;
+
+    /* background-image: url("bg2.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat; */
 }
 
 .view-time
